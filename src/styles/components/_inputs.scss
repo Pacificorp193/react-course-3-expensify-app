@@ -1,0 +1,20 @@
+.text-input {
+  border: 1px solid #cacccd;
+  border-radius: 4px;
+  height: 50px;
+  font-size: $font-size-large;
+  font-weight: 300;
+  padding: $s-size;
+}
+
+.select {
+// Use @extend then the selector to copy
+// This allows you to get everything from the other one &
+// add more that you don't want in the previous.
+  @extend .text-input;
+}
+
+.textarea {
+  @extend .text-input;
+  height: 10rem;
+}
