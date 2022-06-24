@@ -16,4 +16,10 @@ const app = intializeApp(firebaseConfig);
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
+let returnUrl = localStorage.getItem('returnUrl');
+if (returnUrl) { // i.e, not null and not empty string 
+    // now returnUrl cannot be null, so it must be a string, which is valid to use in this call
+    router.navigateByUrl(returnUrl);
+}
+
 export { firebase, googleAuthProvider, database as default };
