@@ -200,12 +200,11 @@ const demoState = {
 };
 
 // const user = {
-//   name: 'rick',
-//   age: 24
+//   name: 'gavin',
+//   age: 20
 // };
 
 // console.log({
-//   age: 54,
 //   ...user,
 //   location: 'Utah'
 // });
