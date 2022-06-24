@@ -1,5 +1,5 @@
 import * as firebase from "firebase";
-import { intializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -11,14 +11,13 @@ const firebaseConfig = {
   appId: process.env.FIREBASE_APP_ID
 };
 
-const app = intializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 let returnUrl = localStorage.getItem('returnUrl');
-if (returnUrl) { // i.e, not null and not empty string 
-    // now returnUrl cannot be null, so it must be a string, which is valid to use in this call
+if (returnUrl) {
     router.navigateByUrl(returnUrl);
 }
 
