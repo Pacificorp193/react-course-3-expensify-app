@@ -1,5 +1,4 @@
 import * as firebase from "firebase";
-import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -11,7 +10,7 @@ const firebaseConfig = {
   appId: process.env.FIREBASE_APP_ID
 };
 
-const app = firebase.initializeApp();
+const app = firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
@@ -22,4 +21,4 @@ if (returnUrl) { // i.e, not null and not empty string
     router.navigateByUrl(returnUrl);
 }
 
-export { firebase, googleAuthProvider, database as default };
+export { firebase, googleAuthProvider, app, database as default };
