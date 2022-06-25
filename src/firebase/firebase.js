@@ -11,13 +11,14 @@ const firebaseConfig = {
   appId: process.env.FIREBASE_APP_ID
 };
 
-const app = firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp();
 
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 let returnUrl = localStorage.getItem('returnUrl');
-if (returnUrl) {
+if (returnUrl) { // i.e, not null and not empty string 
+    // now returnUrl cannot be null, so it must be a string, which is valid to use in this call
     router.navigateByUrl(returnUrl);
 }
 
